@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{9C8BE660-3125-416F-9705-97E145E3A3E1}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TP11_EX01.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TP11_EX02.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TP11_EX02_VERSION2.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TP11_EX03.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TP11_EX01">
+        <MSBuild Projects="TP11_EX01.dproj"/>
+    </Target>
+    <Target Name="TP11_EX01:Clean">
+        <MSBuild Projects="TP11_EX01.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TP11_EX01:Make">
+        <MSBuild Projects="TP11_EX01.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TP11_EX02">
+        <MSBuild Projects="TP11_EX02.dproj"/>
+    </Target>
+    <Target Name="TP11_EX02:Clean">
+        <MSBuild Projects="TP11_EX02.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TP11_EX02:Make">
+        <MSBuild Projects="TP11_EX02.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TP11_EX02_VERSION2">
+        <MSBuild Projects="TP11_EX02_VERSION2.dproj"/>
+    </Target>
+    <Target Name="TP11_EX02_VERSION2:Clean">
+        <MSBuild Projects="TP11_EX02_VERSION2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TP11_EX02_VERSION2:Make">
+        <MSBuild Projects="TP11_EX02_VERSION2.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TP11_EX03">
+        <MSBuild Projects="TP11_EX03.dproj"/>
+    </Target>
+    <Target Name="TP11_EX03:Clean">
+        <MSBuild Projects="TP11_EX03.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TP11_EX03:Make">
+        <MSBuild Projects="TP11_EX03.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TP11_EX01;TP11_EX02;TP11_EX02_VERSION2;TP11_EX03"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TP11_EX01:Clean;TP11_EX02:Clean;TP11_EX02_VERSION2:Clean;TP11_EX03:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TP11_EX01:Make;TP11_EX02:Make;TP11_EX02_VERSION2:Make;TP11_EX03:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
